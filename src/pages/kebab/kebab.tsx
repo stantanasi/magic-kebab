@@ -8,7 +8,7 @@ interface Props {
   }
 }
 
-const Kebabs = (props: Props) => {
+const Kebab = (props: Props) => {
   console.log(props)
   return (
     <div>
@@ -17,4 +17,4 @@ const Kebabs = (props: Props) => {
   )
 }
 
-export default Kebabs
+export default Kebab

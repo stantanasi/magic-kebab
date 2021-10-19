@@ -4,7 +4,7 @@ import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import ConfigKebab from './pages/config-kebab/config-kebab';
 import Home from './pages/home/home';
-import Kebabs from './pages/kebabs/kebabs';
+import Kebab from './pages/kebab/kebab';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/kebabs/:name" component={Kebabs} />
-          <Route path="/config-kebab" component={ConfigKebab} />
+          <Route path="/kebabs/config" component={ConfigKebab} />
+          <Route path="/kebabs/:name" component={Kebab} />
         </Switch>
       </Router>
 

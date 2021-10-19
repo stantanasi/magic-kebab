@@ -6,7 +6,7 @@ const Home = (props: {}) => {
       <a href="/kebabs/classic">Classic</a>
       <a href="/kebabs/vege">vege</a>
       <a href="/kebabs/bbq">BBQ</a>
-      <a href="/config-kebab">Configurer son kebab</a>
+      <a href="/kebabs/config">Configurer son kebab</a>
     </div>
   )
 }

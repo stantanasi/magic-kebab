@@ -31,7 +31,7 @@ const MeatsSelector = (props: Props) => {
 
       <Button
         name="Continuer"
-        onClick={() => history.push("/config-kebab/fillings")} />
+        onClick={() => history.push("/kebabs/config/fillings")} />
 
     </Styled.SelectorWrapper>
   )

@@ -5,17 +5,25 @@ import FillingsSelector from './selector/fillings-selector';
 import MeatsSelector from './selector/meats-selector';
 import SaucesSelector from './selector/sauces-selector';
 
-const ConfigKebab = (props: {}) => {
+interface Props {
+  match: {
+    path: string;
+    url: string;
+  }
+}
+
+const ConfigKebab = (props: Props) => {
   const [kebab, setKebab] = useState({});
+  console.log(props)
 
   return (
     <>
-      <Route exact path="/config-kebab" render={() => <Redirect to="/config-kebab/breads" />} />
+      <Route exact path={props.match.url} render={() => <Redirect to={`${props.match.url}/breads`} />} />
 
-      <Route path="/config-kebab/breads" component={() => <BreadsSelector />} />
-      <Route path="/config-kebab/meats" component={() => <MeatsSelector />} />
-      <Route path="/config-kebab/fillings" component={() => <FillingsSelector />} />
-      <Route path="/config-kebab/sauces" component={() => <SaucesSelector />} />
+      <Route path={`${props.match.url}/breads`} component={() => <BreadsSelector />} />
+      <Route path={`${props.match.url}/meats`} component={() => <MeatsSelector />} />
+      <Route path={`${props.match.url}/fillings`} component={() => <FillingsSelector />} />
+      <Route path={`${props.match.url}/sauces`} component={() => <SaucesSelector />} />
     </>
   )
 }

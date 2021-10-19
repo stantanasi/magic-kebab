@@ -30,7 +30,7 @@ const BreadsSelector = (props: Props) => {
 
       <Button 
         name="Continuer"
-        onClick={() => history.push("/config-kebab/meats")}/>
+        onClick={() => history.push("/kebabs/config/meats")}/>
 
     </Styled.SelectorWrapper>
   )
