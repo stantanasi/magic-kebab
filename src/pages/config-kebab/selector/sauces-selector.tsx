@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
 import Button from '../../../components/common/button';
 import Element from '../../../components/common/element';
-import sauces from '../../../data/sauces.data'
+import sauces, { Sauce } from '../../../data/sauces.data'
 import * as Styled from './selector.styled';
 
 interface Props {
-
+  onProceed: (sauces: Sauce[]) => void;
 }
 
 const SaucesSelector = (props: Props) => {
-  const history = useHistory();
   const [selectedSauces, setSelectedSauces] = useState([] as string[]);
 
   return (
@@ -38,7 +36,7 @@ const SaucesSelector = (props: Props) => {
 
       <Button
         name="Continuer"
-        onClick={() => console.log("Done")} />
+        onClick={() => props.onProceed(sauces.filter(sauce => selectedSauces.includes(sauce.slug)))} />
 
     </Styled.SelectorWrapper>
   )

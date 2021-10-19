@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
 import Button from '../../../components/common/button';
 import Element from '../../../components/common/element';
-import fillings from '../../../data/fillings.data'
+import fillings, { Filling } from '../../../data/fillings.data'
 import * as Styled from './selector.styled';
 
 interface Props {
-
+  onProceed: (fillings: Filling[]) => void;
 }
 
 const FillingsSelector = (props: Props) => {
-  const history = useHistory();
   const [selectedFillings, setSelectedFillings] = useState([] as string[]);
 
   return (
@@ -30,7 +28,7 @@ const FillingsSelector = (props: Props) => {
 
       <Button
         name="Continuer"
-        onClick={() => history.push("/kebabs/config/sauces")} />
+        onClick={() => props.onProceed(fillings.filter(filling => selectedFillings.includes(filling.slug)))} />
 
     </Styled.SelectorWrapper>
   )

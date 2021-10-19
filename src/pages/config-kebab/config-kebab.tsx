@@ -23,14 +23,30 @@ const ConfigKebab = (props: Props) => {
     <>
       <Route exact path={props.match.url} render={() => <Redirect to={`${props.match.url}/breads`} />} />
 
+
       <Route path={`${props.match.url}/breads`} component={() => <BreadsSelector
         onProceed={(bread) => {
-          setKebab({ ...kebab, bread: bread })
+          setKebab({ ...kebab, bread: bread });
           history.push(`${props.match.url}/meats`);
         }} />} />
-      <Route path={`${props.match.url}/meats`} component={() => <MeatsSelector />} />
-      <Route path={`${props.match.url}/fillings`} component={() => <FillingsSelector />} />
-      <Route path={`${props.match.url}/sauces`} component={() => <SaucesSelector />} />
+
+      <Route path={`${props.match.url}/meats`} component={() => <MeatsSelector
+        onProceed={(meat) => {
+          setKebab({ ...kebab, meat: meat });
+          history.push(`${props.match.url}/fillings`);
+        }} />} />
+
+      <Route path={`${props.match.url}/fillings`} component={() => <FillingsSelector
+        onProceed={(fillings) => {
+          setKebab({ ...kebab, fillings: fillings });
+          history.push(`${props.match.url}/sauces`);
+        }} />} />
+
+      <Route path={`${props.match.url}/sauces`} component={() => <SaucesSelector
+        onProceed={(sauces) => {
+          setKebab({ ...kebab, sauces: sauces });
+          console.log("Done");
+        }} />} />
     </>
   )
 }

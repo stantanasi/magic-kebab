@@ -28,9 +28,7 @@ const BreadsSelector = (props: Props) => {
 
       <Button 
         name="Continuer"
-        onClick={() => {
-          props.onProceed(breads.find(bread => bread.slug === selectedBread)!!)
-        }}/>
+        onClick={() => props.onProceed(breads.find(bread => bread.slug === selectedBread)!!)}/>
 
     </Styled.SelectorWrapper>
   )
