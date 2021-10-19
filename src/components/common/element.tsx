@@ -5,22 +5,21 @@ interface Props {
   index: number;
   title: string;
   image: string;
-  onSelect: (isSelected: boolean, index: number) => boolean;
+  isSelected: boolean;
+  onSelect: (isSelected: boolean) => void;
 }
 
 const Element = (props: Props) => {
-  const [isSelected, setSelected] = useState(false);
-
   return (
     <ElementWrapper
-      isChecked={isSelected}
-      onClick={() => setSelected(props.onSelect(!isSelected, props.index))}
+      isChecked={props.isSelected}
+      onClick={() => props.onSelect(!props.isSelected)}
     >
       <div>
         <img src={props.image} alt={props.title} />
         <p>{props.title}</p>
       </div>
-      {isSelected && <img src="/assets/checked.png" alt="Is checked" />}
+      {props.isSelected && <img src="/assets/checked.png" alt="Is checked" />}
     </ElementWrapper>
   )
 }
