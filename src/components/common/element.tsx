@@ -9,7 +9,6 @@ interface Props {
 }
 
 const Element = (props: Props) => {
-  console.log(props)
   return (
     <ElementWrapper
       isChecked={props.isSelected}

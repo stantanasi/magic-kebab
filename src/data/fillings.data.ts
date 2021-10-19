@@ -1,6 +1,6 @@
 export interface Filling {
   name: string;
-  slug: 'salade' | 'tomate' | 'oignon';
+  slug: string;
   image: string;
 }
 

@@ -1,11 +1,16 @@
+import breads, { Bread } from './breads.data';
+import fillings, { Filling } from './fillings.data';
+import meats, { Meat } from './meats.data';
+import sauces, { Sauce } from './sauces.data';
+
 export interface Kebab {
-  name: string;
-  slug: string;
-  price: number;
-  bread: 'pain' | 'galette';
-  meat: 'viande' | 'tofu';
-  fillings: ('salade' | 'tomate' | 'oignon')[];
-  sauces: ('blanche' | 'harissa' | 'andalouse' | 'bbq' | 'ketchup' | 'curry')[];
+  name?: string;
+  slug?: string;
+  price?: number;
+  bread?: Bread;
+  meat?: Meat;
+  fillings?: Filling[];
+  sauces?: Sauce[];
 };
 
 const kebabs: Kebab[] = [
@@ -13,28 +18,28 @@ const kebabs: Kebab[] = [
     name: 'Le Classique',
     slug: 'classic',
     price: 5.50,
-    bread: 'pain',
-    meat: 'viande',
-    fillings: ['salade', 'tomate', 'oignon'],
-    sauces: ['blanche'],
+    bread: breads.find(bread => bread.slug === 'pain')!!,
+    meat: meats.find(meat => meat.slug === 'viande')!!,
+    fillings: fillings.filter(filling => filling.slug === 'salade' || filling.slug === 'tomate' || filling.slug === 'oignon'),
+    sauces: sauces.filter(sauce => sauce.slug === 'blanche'),
   },
   {
     name: 'Le Vege',
     slug: 'vege',
     price: 6.00,
-    bread: 'pain',
-    meat: 'tofu',
-    fillings: [],
-    sauces: ['blanche'],
+    bread: breads.find(bread => bread.slug === 'pain')!!,
+    meat: meats.find(meat => meat.slug === 'tofu')!!,
+    fillings: fillings.filter(filling => false),
+    sauces: sauces.filter(sauce => sauce.slug === 'blanche'),
   },
   {
     name: 'Le BBQ',
     slug: 'bbq',
     price: 6.00,
-    bread: 'pain',
-    meat: 'viande',
-    fillings: ['salade', 'tomate', 'oignon'],
-    sauces: ['bbq'],
+    bread: breads.find(bread => bread.slug === 'pain')!!,
+    meat: meats.find(meat => meat.slug === 'viande')!!,
+    fillings: fillings.filter(filling => filling.slug === 'salade' || filling.slug === 'tomate' || filling.slug === 'oignon'),
+    sauces: sauces.filter(sauce => sauce.slug === 'bbq'),
   },
 ];
 export default kebabs
