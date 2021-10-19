@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 import * as Styled from './home.styled';
 import Button from '../../components/common/button'
-import k, { Kebab } from '../../data/kebabs.data'
+import kebabs, { Kebab } from '../../data/kebabs.data'
 import Element from '../../components/common/element';
 
-const Home = (props: {}) => {
+interface Props {
+  cart: {
+    kebab: Kebab;
+    quantity: number;
+  }[];
+}
+
+const Home = (props: Props) => {
   const history = useHistory();
-  const [kebabs, setKebabs] = useState(k)
+  const [cart, setCart] = useState(props.cart)
 
   return (
     <div>
@@ -27,26 +34,26 @@ const Home = (props: {}) => {
       </Styled.PopularKebabs>
 
       <Styled.Cart>
-        <h2>Total : {kebabs.reduce((acc, cur) => acc + (cur.price ?? 0), 0)} €</h2>
+        <h2>Total : {cart.reduce((acc, cur) => acc + ((cur.kebab.price ?? 0) * cur.quantity), 0)} €</h2>
         <Button
           name="Passer la commande"
           onClick={() => { }} />
 
         <h2>Votre commande</h2>
         <Styled.CartItemList>
-          {kebabs.map((kebab, index) => (
+          {cart.map((item, index) => (
             <Styled.CartItem key={index}>
               <div>
-                {kebab.name && <h4>{kebab.name}</h4>}
+                {item.kebab.name && <h4>{item.kebab.name}</h4>}
                 {([] as string[])
                   .concat(`Kebab`)
-                  .concat(kebab.bread?.name || [])
-                  .concat(kebab.meat?.name || [])
-                  .concat(kebab.fillings?.map(filling => filling.name).join(' & ') || [])
-                  .concat(kebab.sauces?.map(sauce => sauce.name).join(' & ') || [])
+                  .concat(item.kebab.bread?.name || [])
+                  .concat(item.kebab.meat?.name || [])
+                  .concat(item.kebab.fillings?.map(filling => filling.name).join(' & ') || [])
+                  .concat(item.kebab.sauces?.map(sauce => sauce.name).join(' & ') || [])
                   .join(', ')}
               </div>
-              <span>x1</span>
+              <span>x{item.quantity}</span>
             </Styled.CartItem>
           ))}
         </Styled.CartItemList>

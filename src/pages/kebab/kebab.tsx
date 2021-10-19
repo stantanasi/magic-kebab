@@ -1,4 +1,5 @@
 import * as Styled from './kebab.styled';
+import { useHistory } from "react-router-dom";
 import Button from '../../components/common/button';
 import Element from '../../components/common/element';
 import kebabs, { Kebab as IKebab } from '../../data/kebabs.data';
@@ -11,9 +12,11 @@ interface Props {
     };
   };
   kebab?: IKebab;
+  onOrder: (kebab: IKebab) => void;
 }
 
 const Kebab = (props: Props) => {
+  const history = useHistory();
   const kebab = kebabs.find(kebab => kebab.slug === props.match?.params?.name) ?? props.kebab;
 
   return (
@@ -56,7 +59,10 @@ const Kebab = (props: Props) => {
 
       <Button
         name="Commander"
-        onClick={() => console.log('Commander')} />
+        onClick={() => {
+          props.onOrder(kebab!!)
+          history.push(`/`)
+        }} />
 
     </ContainerWrapper>
   )

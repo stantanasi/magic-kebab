@@ -12,16 +12,20 @@ interface Props {
     path: string;
     url: string;
   }
+  onOrder: (kebab: IKebab) => void;
 }
 
 const ConfigKebab = (props: Props) => {
   const history = useHistory();
-  const [kebab, setKebab] = useState({} as IKebab);
+  const [kebab, setKebab] = useState({
+    price: 6.00,
+  } as IKebab);
 
   return (
     <>
       <Route exact path={props.match.url} component={() => <Kebab
-        kebab={kebab} />} />
+        kebab={kebab}
+        onOrder={props.onOrder} />} />
 
 
       <Route path={`${props.match.url}/breads`} component={() => <BreadsSelector
