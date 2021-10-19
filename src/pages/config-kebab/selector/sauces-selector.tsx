@@ -21,7 +21,6 @@ const SaucesSelector = (props: Props) => {
         {sauces.map((sauce, index) => (
           <Element
             key={index}
-            index={index}
             title={sauce.name}
             image={sauce.image}
             isSelected={selectedSauces.includes(sauce.slug)}

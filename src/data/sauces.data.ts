@@ -1,6 +1,6 @@
 export interface Sauce {
   name: string;
-  slug: string;
+  slug: 'blanche' | 'harissa' | 'andalouse' | 'bbq' | 'ketchup' | 'curry';
   image: string;
 }
 

@@ -2,22 +2,28 @@ import React from 'react'
 import styled from 'styled-components';
 
 interface Props {
-  index: number;
-  title: string;
-  image: string;
+  title: string | string[];
+  image: string | string[];
   isSelected: boolean;
   onSelect: (isSelected: boolean) => void;
 }
 
 const Element = (props: Props) => {
+  console.log(props)
   return (
     <ElementWrapper
       isChecked={props.isSelected}
       onClick={() => props.onSelect(!props.isSelected)}
     >
       <div>
-        <img src={props.image} alt={props.title} />
-        <p>{props.title}</p>
+        <div style={{ display: 'flex', flexDirection: 'row'}}>
+          {Array.isArray(props.image)
+            ? props.image.map((image, index) => (
+              <img key={index} src={image} alt={Array.isArray(props.title) ? props.title[index] : props.title} />
+            ))
+            : <img src={props.image} alt={Array.isArray(props.title) ? props.title.join(' & ') : props.title} />}
+        </div>
+        <p>{Array.isArray(props.title) ? props.title.join(' & ') : props.title}</p>
       </div>
       {props.isSelected && <img src="/assets/checked.png" alt="Is checked" />}
     </ElementWrapper>

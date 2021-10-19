@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, useHistory } from "react-router-dom";
 import BreadsSelector from './selector/breads-selector';
 import FillingsSelector from './selector/fillings-selector';
 import MeatsSelector from './selector/meats-selector';
@@ -13,8 +13,8 @@ interface Props {
 }
 
 const ConfigKebab = (props: Props) => {
+  const history = useHistory();
   const [kebab, setKebab] = useState({});
-  console.log(props)
 
   return (
     <>

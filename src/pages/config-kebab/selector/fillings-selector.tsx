@@ -21,7 +21,6 @@ const FillingsSelector = (props: Props) => {
         {fillings.map((filling, index) => (
           <Element
             key={index}
-            index={index}
             title={filling.name}
             image={filling.image}
             isSelected={selectedFillings.includes(filling.slug)}

@@ -20,7 +20,6 @@ const BreadsSelector = (props: Props) => {
         {breads.map((bread, index) => (
           <Element
             key={index}
-            index={index}
             title={bread.name}
             image={bread.image}
             isSelected={bread.slug === selectedBread}

@@ -21,7 +21,6 @@ const MeatsSelector = (props: Props) => {
         {meats.map((meat, index) => (
           <Element
             key={index}
-            index={index}
             title={meat.name}
             image={meat.image}
             isSelected={meat.slug === selectedMeat}
