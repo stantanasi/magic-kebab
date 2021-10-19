@@ -29,3 +29,7 @@ button {
   font-size: 18px;
   font-weight: bold;
 }
+
+main {
+  background-color: var(--main-bg-color);
+}
