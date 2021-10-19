@@ -1,0 +1,2 @@
+:root{--main-color:#4d0302;--main-bg-color:#fff6d6;--second-bg-color:#fffcf0}*{box-sizing:border-box;margin:0;padding:0}body{color:#4d0302;color:var(--main-color);font-family:Inconsolata;font-size:18px}h1,h2,h3,h4,h5,h6{font-family:Fredoka One}h1{font-size:36px}button{color:#4d0302;color:var(--main-color);font-family:Inconsolata;font-size:18px;font-weight:700}main{background-color:#fff6d6;background-color:var(--main-bg-color);min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}
+/*# sourceMappingURL=main.628f2acf.chunk.css.map */
