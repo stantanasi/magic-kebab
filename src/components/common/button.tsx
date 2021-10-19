@@ -22,4 +22,5 @@ const ButtonWrapper = styled.button`
   border-radius: 8px;
   color: var(--main-bg-color);
   padding: 1rem 2rem;
+  cursor: pointer;
 `;
