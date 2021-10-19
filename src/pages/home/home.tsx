@@ -1,12 +1,20 @@
 import React from 'react'
+import { useHistory } from 'react-router';
+import Button from '../../components/common/button'
+import kebabs from '../../data/kebabs.data'
 
 const Home = (props: {}) => {
+  const history = useHistory();
+
   return (
     <div>
-      <a href="/kebabs/classic">Classic</a>
-      <a href="/kebabs/vege">vege</a>
-      <a href="/kebabs/bbq">BBQ</a>
-      <a href="/kebabs/config">Configurer son kebab</a>
+      {kebabs.map(kebab => (
+        <a href={`/kebabs/${kebab.slug}`}>{kebab.name}</a>
+      ))}
+
+      <Button
+        name="Configurer son kebab"
+        onClick={() => history.push("/kebabs/config")} />
     </div>
   )
 }
