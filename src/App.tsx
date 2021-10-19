@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import ConfigKebab from './pages/config-kebab/config-kebab';
@@ -8,7 +8,6 @@ import Kebab from './pages/kebab/kebab';
 import { Kebab as IKebab } from './data/kebabs.data';
 
 function App() {
-  const history = useHistory();
   const [cart, setCart] = useState([] as {
     kebab: IKebab,
     quantity: number,
