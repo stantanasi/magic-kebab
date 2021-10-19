@@ -14,7 +14,7 @@ const Home = (props: {}) => {
 
       <Button
         name="Configurer son kebab"
-        onClick={() => history.push("/kebabs/config")} />
+        onClick={() => history.push("/kebabs/config/breads")} />
     </div>
   )
 }

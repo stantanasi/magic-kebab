@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Redirect, Route, useHistory } from "react-router-dom";
-import { Kebab } from '../../data/kebabs.data';
+import { Route, useHistory } from "react-router-dom";
+import { Kebab as IKebab } from '../../data/kebabs.data';
+import Kebab from '../kebab/kebab';
 import BreadsSelector from './selector/breads-selector';
 import FillingsSelector from './selector/fillings-selector';
 import MeatsSelector from './selector/meats-selector';
@@ -15,13 +16,12 @@ interface Props {
 
 const ConfigKebab = (props: Props) => {
   const history = useHistory();
-  const [kebab, setKebab] = useState({} as Kebab);
-
-  console.log(kebab)
+  const [kebab, setKebab] = useState({} as IKebab);
 
   return (
     <>
-      <Route exact path={props.match.url} render={() => <Redirect to={`${props.match.url}/breads`} />} />
+      <Route exact path={props.match.url} component={() => <Kebab
+        kebab={kebab} />} />
 
 
       <Route path={`${props.match.url}/breads`} component={() => <BreadsSelector
@@ -45,7 +45,7 @@ const ConfigKebab = (props: Props) => {
       <Route path={`${props.match.url}/sauces`} component={() => <SaucesSelector
         onProceed={(sauces) => {
           setKebab({ ...kebab, sauces: sauces });
-          console.log("Done");
+          history.push(`${props.match.url}`);
         }} />} />
     </>
   )

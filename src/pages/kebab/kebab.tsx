@@ -1,19 +1,20 @@
 import * as Styled from './kebab.styled';
 import Button from '../../components/common/button';
 import Element from '../../components/common/element';
-import kebabs from '../../data/kebabs.data';
+import kebabs, { Kebab as IKebab } from '../../data/kebabs.data';
 import { ContainerWrapper } from '../../components/common/container.styled';
 
 interface Props {
-  match: {
+  match?: {
     params: {
       name: string;
-    }
-  }
+    };
+  };
+  kebab?: IKebab;
 }
 
 const Kebab = (props: Props) => {
-  const kebab = kebabs.find(kebab => kebab.slug === props.match.params.name);
+  const kebab = kebabs.find(kebab => kebab.slug === props.match?.params?.name) ?? props.kebab;
 
   return (
     <ContainerWrapper>
