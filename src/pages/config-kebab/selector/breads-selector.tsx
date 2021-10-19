@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useState } from 'react'
 import Button from '../../../components/common/button'
 import Element from '../../../components/common/element'
-import breads from '../../../data/breads.data'
+import breads, { Bread } from '../../../data/breads.data'
 import * as Styled from './selector.styled';
 
 interface Props {
+  onProceed: (bread: Bread) => void;
 }
 
 const BreadsSelector = (props: Props) => {
-  const history = useHistory();
   const [selectedBread, setSelectedBread] = useState('');
 
   return (
@@ -29,7 +28,9 @@ const BreadsSelector = (props: Props) => {
 
       <Button 
         name="Continuer"
-        onClick={() => history.push("/kebabs/config/meats")}/>
+        onClick={() => {
+          props.onProceed(breads.find(bread => bread.slug === selectedBread)!!)
+        }}/>
 
     </Styled.SelectorWrapper>
   )
