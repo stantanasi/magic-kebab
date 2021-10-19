@@ -11,4 +11,6 @@ export const SelectorWrapper = styled.div`
 export const ElementWrapper = styled.div`
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
