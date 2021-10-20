@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import * as Styled from './home.styled';
 import Button from '../../components/common/button'
 import kebabs, { Kebab } from '../../data/kebabs.data'
-import Element from '../../components/common/element';
+import Card from '../../components/common/card';
 
 interface Props {
   cart: {
@@ -19,7 +19,7 @@ const Home = (props: Props) => {
     <div>
       <Styled.PopularKebabs>
         {kebabs.map((kebab, index) => (
-          <Element
+          <Card
             key={index}
             title={kebab.name || ''}
             image=""

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../../components/common/button';
-import Element from '../../../components/common/element';
+import Card from '../../../components/common/card';
 import fillings, { Filling } from '../../../data/fillings.data'
 import * as Styled from './selector.styled';
 
@@ -17,7 +17,7 @@ const FillingsSelector = (props: Props) => {
 
       <Styled.ElementWrapper>
         {fillings.map((filling, index) => (
-          <Element
+          <Card
             key={index}
             title={filling.name}
             image={filling.image}

@@ -8,7 +8,7 @@ interface Props {
   onSelect: (isSelected: boolean) => void;
 }
 
-const Element = (props: Props) => {
+const Card = (props: Props) => {
   return (
     <ElementWrapper
       isChecked={props.isSelected}
@@ -29,7 +29,7 @@ const Element = (props: Props) => {
   )
 }
 
-export default Element
+export default Card
 
 const ElementWrapper = styled.div<{ isChecked: boolean }>`
   outline: ${props => props.isChecked ? '4px solid #4D0302' : '1px solid rgba(77, 3, 2, 0.24)'};

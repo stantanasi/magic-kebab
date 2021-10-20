@@ -1,7 +1,7 @@
 import * as Styled from './kebab.styled';
 import { useHistory } from "react-router-dom";
 import Button from '../../components/common/button';
-import Element from '../../components/common/element';
+import Card from '../../components/common/card';
 import kebabs, { Kebab as IKebab } from '../../data/kebabs.data';
 import { ContainerWrapper } from '../../components/common/container.styled';
 
@@ -25,7 +25,7 @@ const Kebab = (props: Props) => {
 
       <Styled.SummaryElementWrapper>
 
-        <Element
+        <Card
           title={kebab?.bread?.name ?? ''}
           image={kebab?.bread?.image ?? ''}
           isSelected={false}
@@ -33,7 +33,7 @@ const Kebab = (props: Props) => {
 
         <h2>+</h2>
 
-        <Element
+        <Card
           title={kebab?.meat?.name ?? ''}
           image={kebab?.meat?.image ?? ''}
           isSelected={false}
@@ -41,7 +41,7 @@ const Kebab = (props: Props) => {
 
         <h2>+</h2>
 
-        <Element
+        <Card
           title={kebab?.fillings?.map(filling => filling.name) ?? []}
           image={kebab?.fillings?.map(filling => filling.image) ?? []}
           isSelected={false}
@@ -49,7 +49,7 @@ const Kebab = (props: Props) => {
 
         <h2>+</h2>
 
-        <Element
+        <Card
           title={kebab?.sauces?.map(sauce => sauce.name) ?? []}
           image={kebab?.sauces?.map(sauce => sauce.image) ?? []}
           isSelected={false}
