@@ -18,7 +18,6 @@ interface Props {
 const Kebab = (props: Props) => {
   const history = useHistory();
   const kebab = kebabs.find(kebab => kebab.slug === props.match?.params?.name) ?? props.kebab;
-  console.log(props)
 
   return (
     <ContainerWrapper>

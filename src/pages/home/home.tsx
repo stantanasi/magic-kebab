@@ -37,7 +37,7 @@ const Home = (props: Props) => {
         <h2>Total : {props.cart.reduce((acc, cur) => acc + ((cur.kebab.price ?? 0) * cur.quantity), 0)} €</h2>
         <Button
           name="Passer la commande"
-          onClick={() => { }} />
+          onClick={() => history.push(`${process.env.PUBLIC_URL}/order-validate`)} />
 
         <h2>Votre commande</h2>
         <Styled.CartItemList>
