@@ -22,7 +22,7 @@ const Home = (props: Props) => {
           <Card
             key={index}
             title={kebab.name || ''}
-            image=""
+            image={kebab.image || ''}
             isSelected={false}
             onSelect={() => history.push(`/kebabs/${kebab.slug}`)} />
         ))}

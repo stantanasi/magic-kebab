@@ -47,9 +47,10 @@ const ElementWrapper = styled.div<{ isChecked: boolean }>`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    justify-content: center;
   }
 
   img {
-    margin-left: auto;
+    width: 120px;
   }
 `;

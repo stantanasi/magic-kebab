@@ -7,6 +7,7 @@ export interface Kebab {
   name?: string;
   slug?: string;
   price?: number;
+  image?: string;
   bread?: Bread;
   meat?: Meat;
   fillings?: Filling[];
@@ -18,6 +19,7 @@ const kebabs: Kebab[] = [
     name: 'Le Classique',
     slug: 'classic',
     price: 5.50,
+    image: './assets/kebabs/kebab-classic.jpg',
     bread: breads.find(bread => bread.slug === 'pain')!!,
     meat: meats.find(meat => meat.slug === 'viande')!!,
     fillings: fillings.filter(filling => filling.slug === 'salade' || filling.slug === 'tomate' || filling.slug === 'oignon'),
@@ -27,6 +29,7 @@ const kebabs: Kebab[] = [
     name: 'Le Vege',
     slug: 'vege',
     price: 6.00,
+    image: './assets/kebabs/kebab-vege.jpg',
     bread: breads.find(bread => bread.slug === 'pain')!!,
     meat: meats.find(meat => meat.slug === 'tofu')!!,
     fillings: fillings.filter(filling => false),
@@ -36,6 +39,7 @@ const kebabs: Kebab[] = [
     name: 'Le BBQ',
     slug: 'bbq',
     price: 6.00,
+    image: './assets/kebabs/kebab-bbq.jpg',
     bread: breads.find(bread => bread.slug === 'pain')!!,
     meat: meats.find(meat => meat.slug === 'viande')!!,
     fillings: fillings.filter(filling => filling.slug === 'salade' || filling.slug === 'tomate' || filling.slug === 'oignon'),
