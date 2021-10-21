@@ -8,12 +8,12 @@ const meats: Meat[] = [
   {
     name: 'Viande',
     slug: 'viande',
-    image: '/assets/meats/viande.png',
+    image: `${process.env.PUBLIC_URL}/assets/meats/viande.png`,
   },
   {
     name: 'Tofu',
     slug: 'tofu',
-    image: '/assets/meats/tofu.png',
+    image: `${process.env.PUBLIC_URL}/assets/meats/tofu.png`,
   },
 ];
 export default meats;

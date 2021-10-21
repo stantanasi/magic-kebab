@@ -8,17 +8,17 @@ const fillings: Filling[] = [
   {
     name: 'Salade',
     slug: 'salade',
-    image: '/assets/fillings/salade.png',
+    image: `${process.env.PUBLIC_URL}/assets/fillings/salade.png`,
   },
   {
     name: 'Tomate',
     slug: 'tomate',
-    image: '/assets/fillings/tomate.png',
+    image: `${process.env.PUBLIC_URL}/assets/fillings/tomate.png`,
   },
   {
     name: 'Oignon',
     slug: 'oignon',
-    image: '/assets/fillings/oignon.png',
+    image: `${process.env.PUBLIC_URL}/assets/fillings/oignon.png`,
   },
 ];
 export default fillings;

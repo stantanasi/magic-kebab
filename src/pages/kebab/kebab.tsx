@@ -18,6 +18,7 @@ interface Props {
 const Kebab = (props: Props) => {
   const history = useHistory();
   const kebab = kebabs.find(kebab => kebab.slug === props.match?.params?.name) ?? props.kebab;
+  console.log(props)
 
   return (
     <ContainerWrapper>
@@ -61,7 +62,7 @@ const Kebab = (props: Props) => {
         name="Commander"
         onClick={() => {
           props.onOrder(kebab!!)
-          history.push(`/`)
+          history.push(`${process.env.PUBLIC_URL}/`)
         }} />
 
     </ContainerWrapper>

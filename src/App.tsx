@@ -23,11 +23,11 @@ function App() {
 
       <Router>
         <Switch>
-          <Route path="/" exact component={() => <Home
+          <Route path={`${process.env.PUBLIC_URL}/`} exact component={() => <Home
             cart={cart} />} />
-          <Route path="/kebabs/config" component={(props: any) => <ConfigKebab
+          <Route path={`${process.env.PUBLIC_URL}/kebabs/config`} component={(props: any) => <ConfigKebab
             {...props} onOrder={handleOnOrder} />} />
-          <Route path="/kebabs/:name" component={(props: any) => <Kebab
+          <Route path={`${process.env.PUBLIC_URL}/kebabs/:name`} component={(props: any) => <Kebab
             {...props}  onOrder={handleOnOrder} />} />
         </Switch>
       </Router>

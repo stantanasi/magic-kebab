@@ -20,6 +20,7 @@ const ConfigKebab = (props: Props) => {
   const [kebab, setKebab] = useState({
     price: 6.00,
   } as IKebab);
+  console.log(props)
 
   return (
     <>

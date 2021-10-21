@@ -8,32 +8,32 @@ const sauces: Sauce[] = [
   {
     name: 'Blanche',
     slug: 'blanche',
-    image: '/assets/sauces/blanche.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/blanche.png`,
   },
   {
     name: 'Harissa',
     slug: 'harissa',
-    image: '/assets/sauces/harissa.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/harissa.png`,
   },
   {
     name: 'Andalouse',
     slug: 'andalouse',
-    image: '/assets/sauces/andalouse.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/andalouse.png`,
   },
   {
     name: 'BBQ',
     slug: 'bbq',
-    image: '/assets/sauces/bbq.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/bbq.png`,
   },
   {
     name: 'Ketchup',
     slug: 'ketchup',
-    image: '/assets/sauces/ketchup.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/ketchup.png`,
   },
   {
     name: 'Curry',
     slug: 'curry',
-    image: '/assets/sauces/curry.png',
+    image: `${process.env.PUBLIC_URL}/assets/sauces/curry.png`,
   },
 ];
 export default sauces

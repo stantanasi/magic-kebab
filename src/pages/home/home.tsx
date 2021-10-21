@@ -24,12 +24,13 @@ const Home = (props: Props) => {
             title={kebab.name || ''}
             image={kebab.image || ''}
             isSelected={false}
-            onSelect={() => history.push(`/kebabs/${kebab.slug}`)} />
+            onSelect={() => history.push(`${process.env.PUBLIC_URL}/kebabs/${kebab.slug}`)} />
         ))}
 
         <Button
           name="Configurer votre kebab"
-          onClick={() => history.push("/kebabs/config/breads")} />
+          onClick={() => history.push(`${process.env.PUBLIC_URL}/kebabs/config/breads`)} />
+
       </Styled.PopularKebabs>
 
       <Styled.Cart>

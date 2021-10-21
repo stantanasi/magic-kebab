@@ -24,7 +24,7 @@ const Card = (props: Props) => {
         </div>
         <p>{Array.isArray(props.title) ? props.title.join(' & ') : props.title}</p>
       </div>
-      {props.isSelected && <img src="/assets/checked.png" alt="Is checked" />}
+      {props.isSelected && <img src={`${process.env.PUBLIC_URL}/assets/checked.png`} alt="Is checked" />}
     </ElementWrapper>
   )
 }
@@ -50,7 +50,11 @@ const ElementWrapper = styled.div<{ isChecked: boolean }>`
     justify-content: center;
   }
 
-  img {
+  > div img {
     width: 120px;
+  }
+
+  > img {
+    margin-left: auto;
   }
 `;
